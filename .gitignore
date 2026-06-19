@@ -1,0 +1,65 @@
+# ---------------------------------------------------------------------------
+# First Session — .gitignore (tuned for a public repository)
+# ---------------------------------------------------------------------------
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Secrets (never commit) ------------------------------------------------
+# The pipeline's GEMINI_API_KEY lives in .env. Ignore every env file but keep
+# the committed template so collaborators know which vars to set.
+.env
+.env.*
+!.env.example
+
+# Credentials / keys that must never be published
+*.pem
+*.key
+*.p12
+**/*service-account*.json
+**/*credentials*.json
+gha-creds-*.json
+
+# --- Build output (generated) ----------------------------------------------
+apps/web/dist/
+dist/
+*.tsbuildinfo
+.vite/
+
+# --- Deploy tooling artifacts ----------------------------------------------
+# Firebase Hosting
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+ui-debug.log
+database-debug.log
+firestore-debug.log
+# gcloud
+.gcloudignore.local
+
+# --- Local editor / OS files -----------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- Claude Code local settings --------------------------------------------
+# Per-user permission allowlists; shared .claude/settings.json stays tracked.
+**/.claude/settings.local.json
+
+# --- Pipeline scratch ------------------------------------------------------
+# Resume cursor for the scraper; regenerated on every run, not a deliverable.
+data/seen_urls.json

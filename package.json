@@ -1,0 +1,31 @@
+{
+  "name": "first-session-extractor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Extract therapist records from a filtered Psychology Today search for the First Session UX experiment.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "postinstall": "echo \"Run 'npm run install-browser' to download Chromium for Playwright.\"",
+    "install-browser": "playwright install chromium",
+    "fixture": "node pipeline/build-app-fixture.js",
+    "extract": "node pipeline/extract.js",
+    "dry-run": "node pipeline/extract.js --dry-run --headless false",
+    "spreadsheet": "node pipeline/extract.js --spreadsheet-only",
+    "discover-contacts": "node pipeline/discover-contacts.js",
+    "discover-contacts:dry-run": "node pipeline/discover-contacts.js --dry-run",
+    "discover-emails": "node pipeline/discover-contacts.js --email-only --max-records 1000",
+    "discover-emails:dry-run": "node pipeline/discover-contacts.js --email-only --dry-run",
+    "web:install": "npm --prefix apps/web install",
+    "web:dev": "npm --prefix apps/web run dev",
+    "web:build": "npm --prefix apps/web run build",
+    "web:preview": "npm --prefix apps/web run preview",
+    "deploy:hosting": "firebase deploy --only hosting --project first-session-ux",
+    "deploy:cloudrun": "bash deploy/deploy-cloudrun.sh"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}

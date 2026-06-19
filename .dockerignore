@@ -1,0 +1,24 @@
+# Keep the Cloud Run build context lean: only apps/web source is needed.
+**/node_modules
+**/dist
+**/.vite
+
+# Pipeline + data outputs are not part of the web build.
+pipeline
+data
+samples
+
+# Secrets and local config must never enter the image.
+.env
+.env.*
+!.env.example
+.firebase
+.claude
+**/.claude
+
+# Tooling / docs / VCS
+.git
+.gitignore
+*.log
+*.md
+*.tsbuildinfo

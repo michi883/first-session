@@ -1,0 +1,722 @@
+:root {
+  --bg: #f4f1ec;
+  --surface: #ffffff;
+  --ink: #2f3530;
+  --ink-soft: #6b736c;
+  --accent: #7a9a86;
+  --accent-deep: #6a8a76;
+  --accent-soft: #e4ede7;
+  --line: #e7e2d9;
+  --radius: 16px;
+  --shadow: 0 6px 24px rgba(47, 53, 48, 0.07);
+
+  --good: #4f7d62;
+  --good-bg: #e4ede7;
+  --warn: #9a7d4f;
+  --warn-bg: #f1ebdd;
+  --danger: #b6534f;
+  --danger-bg: #f3e0df;
+  --ok: #5b7a93;
+  --ok-bg: #e3ebf1;
+  --muted-bg: #ece9e2;
+
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+.app {
+  position: relative;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 0 18px env(safe-area-inset-bottom);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 12px 0 2px;
+}
+
+.hero__brand {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero__tagline {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.hero__message {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  max-width: 42ch;
+}
+
+/* ---------- Dataset proof ---------- */
+.proof {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  padding: 0 2px;
+}
+
+.proof strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.proof__lead {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* ---------- "What is this?" ---------- */
+.whatis {
+  margin-top: 8px;
+}
+
+.whatis__toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font: inherit;
+  color: var(--ink);
+  text-align: left;
+}
+
+.whatis__toggle:hover {
+  border-color: var(--accent);
+}
+
+.whatis__icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: grid;
+  place-items: center;
+}
+
+.whatis__q {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.whatis__cue {
+  margin-left: auto;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.whatis__body {
+  margin: 8px 0 0;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.whatis__body p {
+  margin: 0 0 10px;
+}
+.whatis__body p:last-child {
+  margin-bottom: 0;
+}
+.whatis__body strong {
+  color: var(--ink);
+}
+
+/* ---------- Progress line + confirmation ---------- */
+.progressline {
+  margin: 8px 0 0;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+}
+
+.progressline__lead {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.confirm {
+  margin: 12px 0 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--good);
+  background: var(--good-bg);
+  border-radius: 10px;
+  padding: 10px 14px;
+  animation: fade-in 0.2s ease;
+}
+
+/* ---------- Recommendation card ---------- */
+.rec {
+  margin-top: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+  animation: rec-in 0.3s ease;
+}
+
+/* Fade the outgoing recommendation before it is replaced in place. */
+.rec-fade {
+  transition: opacity 0.22s ease;
+}
+
+.rec-fade--out {
+  opacity: 0;
+}
+
+/* Brief "Finding another recommendation…" state, sized to hold the card slot
+   so the page never jumps or grows. */
+.rec--finding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  animation: fade-in 0.2s ease;
+}
+
+.rec__finding {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.rec__eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Reach is the dominant element — it should catch the eye first. */
+.rec__reach {
+  margin: 4px 0 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.rec__reach--name {
+  font-size: 1.5rem;
+  word-break: break-word;
+}
+
+.rec__name {
+  margin: 4px 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  word-break: break-word;
+}
+
+/* "Why start here?" bullets */
+.rec__why {
+  margin-top: 10px;
+}
+
+.rec__whytitle {
+  margin: 0 0 4px;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.rec__bullets {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.rec__bullets li::marker {
+  color: var(--accent);
+}
+
+/* "All done" state */
+.rec--done {
+  border-left-color: var(--line);
+}
+.rec__heading {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.rec__donenote {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Actions ---------- */
+.actions {
+  margin-top: 10px;
+}
+
+.actions__primary {
+  margin-bottom: 8px;
+}
+
+.actions__secondary {
+  margin-bottom: 4px;
+}
+
+.actions__none {
+  margin: 0 0 8px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+.cta,
+.copy-btn {
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--accent-deep);
+  font-weight: 600;
+  font-size: 0.84rem;
+  padding: 9px 15px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+  font-family: inherit;
+}
+
+.cta:hover,
+.copy-btn:hover {
+  background: var(--accent-soft);
+}
+
+.cta--primary,
+.copy-btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-size: 0.94rem;
+  padding: 11px 18px;
+  width: 100%;
+  text-align: center;
+}
+
+.cta--primary:hover,
+.copy-btn--primary:hover {
+  background: var(--accent-deep);
+}
+
+/* Copy confirmation: outline buttons go green; the filled primary stays filled. */
+.copy-btn--done:not(.copy-btn--primary) {
+  border-color: var(--good);
+  color: var(--good);
+  background: var(--good-bg);
+}
+
+.actions__more {
+  margin-top: 10px;
+}
+
+.actions__morebtn {
+  border: none;
+  background: none;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.84rem;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.actions__morelist {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------- Completion buttons ---------- */
+.complete {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.complete__btn {
+  flex: 1 1 0;
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.84rem;
+  padding: 9px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.complete__btn:hover {
+  border-color: var(--ink-soft);
+}
+
+.complete__btn--done {
+  border-color: var(--good);
+  color: var(--good);
+}
+.complete__btn--done:hover {
+  background: var(--good-bg);
+}
+
+.complete__btn--dead {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+.complete__btn--dead:hover {
+  background: var(--danger-bg);
+}
+
+/* ---------- "Try another option" ---------- */
+.another {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.another__btn {
+  border: none;
+  background: none;
+  color: var(--accent-deep);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.86rem;
+  padding: 8px 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.another__btn:hover {
+  color: var(--accent);
+}
+
+/* ---------- Browse all ---------- */
+.browse {
+  margin-top: 12px;
+}
+
+.browse__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font: inherit;
+  color: var(--ink);
+  text-align: left;
+}
+
+.browse__toggle:hover {
+  border-color: var(--accent);
+}
+
+.browse__toggle-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.browse__toggle-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.browse__toggle-sub {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.browse__toggle-cue {
+  flex: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.browse__body {
+  margin-top: 12px;
+}
+
+.browse__search {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 11px 14px;
+  font: inherit;
+  font-size: 0.92rem;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.browse__search:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.browse__filters {
+  margin: 12px 0 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chiprow {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 2px;
+}
+
+.chiprow::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex: none;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-soft);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  border-color: var(--accent);
+}
+
+.chip--on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.browse__empty {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  padding: 20px;
+}
+
+.browse__group {
+  margin-top: 16px;
+}
+
+.browse__grouptitle {
+  margin: 0 0 8px;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.browse__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ---------- Browse item ---------- */
+.bitem {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bitem--open {
+  box-shadow: var(--shadow);
+}
+
+.bitem__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  padding: 12px 14px;
+  cursor: pointer;
+}
+
+.bitem__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  flex: 1;
+}
+
+.bitem__name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+  word-break: break-word;
+}
+
+.bitem__sub {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.bitem__chev {
+  flex: none;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+.bitem__body {
+  padding: 0 14px 14px;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Status pill ---------- */
+.pstatus {
+  flex: none;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--muted-bg);
+  color: var(--ink-soft);
+}
+
+.pstatus--contacted {
+  background: var(--good-bg);
+  color: var(--good);
+}
+.pstatus--skipped {
+  background: var(--ok-bg);
+  color: var(--ok);
+}
+.pstatus--dead {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+/* ---------- Footer ---------- */
+.app__footer {
+  padding: 8px 4px 10px;
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.app__footer p {
+  margin: 0;
+  max-width: 46ch;
+  margin-inline: auto;
+}
+
+/* ---------- Transitions ---------- */
+@keyframes rec-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rec,
+  .confirm {
+    animation: none;
+  }
+  .rec-fade {
+    transition: none;
+  }
+}
