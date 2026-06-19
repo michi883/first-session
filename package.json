@@ -22,8 +22,7 @@
     "web:dev": "npm --prefix apps/web run dev",
     "web:build": "npm --prefix apps/web run build",
     "web:preview": "npm --prefix apps/web run preview",
-    "deploy:hosting": "firebase deploy --only hosting --project first-session-ux",
-    "deploy:cloudrun": "bash deploy/deploy-cloudrun.sh"
+    "deploy:hosting": "firebase deploy --only hosting --project first-session-ux"
   },
   "dependencies": {
     "playwright": "^1.48.0"

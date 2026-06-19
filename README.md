@@ -133,8 +133,8 @@ pipeline/                     data pipeline
   build-app-fixture.js        group therapists into access paths for the app
   lib/                        shared extraction/enrichment/export helpers
 data/                         pipeline outputs (TSV / CSV / JSON)
-deploy/                       deploy scripts + nginx template (see deploy/README.md)
-Dockerfile, firebase.json     Cloud Run + Firebase Hosting config (first-session-ux)
+deploy/                       deploy script (see deploy/README.md)
+firebase.json, .firebaserc    Firebase Hosting config (first-session-ux)
 ```
 
 ## How the data pipeline works
@@ -201,16 +201,16 @@ scheduling, payments, or scraping**.
 
 ## Deploy
 
-One static build ships to two targets on GCP project **`first-session-ux`**:
+The static build ships to **Firebase Hosting** on GCP project
+**`first-session-ux`** (live at <https://first-session-ux.web.app>):
 
 ```bash
 npm run deploy:hosting     # Firebase Hosting — serves apps/web/dist
-npm run deploy:cloudrun    # Cloud Run — nginx container of the same build
 ```
 
-See [`deploy/README.md`](deploy/README.md) for prerequisites (`firebase login` /
-`gcloud auth login`), local container testing, and configuration. No secrets are
-bundled into either target.
+See [`deploy/README.md`](deploy/README.md) for prerequisites (`firebase login`)
+and configuration. The app is fully static, so a CDN is all it needs — there is
+no container/Cloud Run target. No secrets are bundled.
 
 ## Product analytics — Pendo (Novus) integration
 
@@ -228,12 +228,15 @@ is mapped to a *contact path* (not an individual "therapist card"), and the even
 properties stay consistent with the product's honest framing — no quality score,
 no "best therapist", and Medicaid/teens remain **listed, not verified**.
 
-> ⚠️ **Demo-only data.** This is a hackathon demo with **no real users**: the
-> dataset is a public, Psychology Today–derived snapshot, and `top_focus_areas`
-> on an event describe a *path's listed focus*, not any real person's diagnosis.
-> Before putting this in front of real parents, the event payloads should be
-> reviewed — searches about a minor's mental health tied to a Medicaid plan are
-> sensitive, and Pendo features like Session Replay should stay off.
+> ⚠️ **Demo usage, real data.** The therapist data is **real** — scraped from
+> public Psychology Today profiles, with valid links back to each profile — so
+> the access paths and PT links are genuine. What's "demo" is the *usage*: this
+> is a hackathon build with **no real parents using it for real outreach**, so
+> the analytics events represent test traffic, not real families. Event
+> properties like `top_focus_areas` describe a *path's listed focus areas*, never
+> a real person's diagnosis. Before real parents use this, the event payloads
+> should be reviewed — searches about a minor's mental health tied to a Medicaid
+> plan are sensitive — and Pendo features like Session Replay should stay off.
 
 ### How it's wired
 
