@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Ziqi Ding",
+    "credentials_or_title": "Pre-Licensed Professional, MA",
+    "headshot_url": "https://photos.psychologytoday.com/f9191c07-68fd-449b-af12-4f08b6b606fc/2/320x400.jpeg",
+    "location": "New York, NY 10001",
+    "child_fit_signals": [
+      "Overwhelmed",
+      "Anxious",
+      "Family conflict",
+      "Identity exploration",
+      "Trauma support"
+    ],
+    "parent_concern_signals": [
+      "Needs gentle approach",
+      "Needs identity-affirming care",
+      "Needs help with anxiety",
+      "Needs family involvement",
+      "Wants practical coping skills"
+    ],
+    "communication_style_signals": [
+      "Warm",
+      "Gentle",
+      "Affirming",
+      "Skills-focused",
+      "Culturally responsive"
+    ],
+    "emotional_tone_summary": "Warm, grounded, and culturally responsive.",
+    "parent_friendly_summary": "Ziqi may be a good fit for teens or families seeking a gentle, culturally affirming space to navigate anxiety, identity, and life transitions.",
+    "possible_less_ideal_if": [
+      "You prefer a therapist with many years of post-licensure experience",
+      "You are looking for a specialist exclusively focused on child-only therapy"
+    ],
+    "parent_question_suggestions": [
+      "How do you adapt your approach for younger teens versus older teens?",
+      "How do you involve parents in the therapy process?",
+      "Can you tell me more about how you use expressive arts in your sessions?"
+    ]
+  },
+  {
+    "name": "Sue Harris",
+    "credentials_or_title": "Psychologist, PhD",
+    "headshot_url": "https://photos.psychologytoday.com/3c4d45d4-46cd-11ea-a6ad-06142c356176/3/320x400.jpeg",
+    "location": "Online Only",
+    "child_fit_signals": [
+      "Anxious",
+      "Friendship struggles",
+      "Family conflict",
+      "School stress"
+    ],
+    "parent_concern_signals": [
+      "Needs help with anxiety",
+      "Needs school support",
+      "Needs family involvement"
+    ],
+    "communication_style_signals": [
+      "Collaborative",
+      "Nonjudgmental",
+      "Relational"
+    ],
+    "emotional_tone_summary": "Collaborative, relational, and nonjudgmental.",
+    "parent_friendly_summary": "May be a good fit for teens working through anxiety or relationship challenges who prefer a collaborative, one-on-one approach.",
+    "possible_less_ideal_if": [
+      "You are looking for in-person therapy",
+      "You are seeking family or couples therapy sessions"
+    ],
+    "parent_question_suggestions": [
+      "How do you typically work with teens to help them feel comfortable in online sessions?",
+      "How do you involve parents in the process while maintaining the teen's privacy?",
+      "Can you tell me more about your interpersonal approach to therapy?"
+    ]
+  },
+  {
+    "name": "Gabrielle Jensen",
+    "credentials_or_title": "Clinical Social Work/Therapist, LCSW",
+    "headshot_url": "https://photos.psychologytoday.com/935576e4-e49a-41c6-9fb5-4ef68ed43545/1/320x400.jpeg",
+    "location": "New York, NY 10023",
+    "child_fit_signals": [
+      "Anxious",
+      "Family conflict",
+      "Trauma support",
+      "Creative teen"
+    ],
+    "parent_concern_signals": [
+      "Needs trauma-informed care",
+      "Needs family involvement",
+      "Needs identity-affirming care"
+    ],
+    "communication_style_signals": [
+      "Collaborative",
+      "Nonjudgmental",
+      "Culturally responsive",
+      "Relational"
+    ],
+    "emotional_tone_summary": "Warm, collaborative, and culturally attuned.",
+    "parent_friendly_summary": "May fit children and teens who need a space to explore their experiences through a creative and trauma-informed lens.",
+    "possible_less_ideal_if": [
+      "You are looking for a strictly behavioral or short-term skills-based approach"
+    ],
+    "parent_question_suggestions": [
+      "How do you incorporate creativity into sessions with children?",
+      "How do you involve parents in the therapeutic process?",
+      "What does a typical session look like for a child?"
+    ]
+  },
+  {
+    "name": "Amanda Macchiarola",
+    "credentials_or_title": "Pre-Licensed Professional, MHC-LP",
+    "headshot_url": "https://photos.psychologytoday.com/e423ab92-d52e-4ee4-8d91-2c7b97746c9d/1/320x400.jpeg",
+    "location": "Online Only",
+    "child_fit_signals": [
+      "Anxious",
+      "Identity exploration",
+      "School stress"
+    ],
+    "parent_concern_signals": [
+      "Needs identity-affirming care",
+      "Needs help with anxiety",
+      "Needs school support",
+      "Wants practical coping skills"
+    ],
+    "communication_style_signals": [
+      "Warm",
+      "Affirming",
+      "Collaborative",
+      "Skills-focused",
+      "Nonjudgmental"
+    ],
+    "emotional_tone_summary": "Warm, affirming, and collaborative.",
+    "parent_friendly_summary": "May fit children or teens who need an affirming, non-judgmental space to explore their identity and build practical coping skills.",
+    "possible_less_ideal_if": [
+      "You are looking for in-person sessions",
+      "You prefer a strictly structured or directive approach"
+    ],
+    "parent_question_suggestions": [
+      "How do you adapt your approach for younger children versus teens?",
+      "How do you involve parents in the therapeutic process?",
+      "What does an affirming approach look like in your sessions?"
+    ]
+  },
+  {
+    "name": "Indie M Cusack",
+    "credentials_or_title": "Clinical Social Work/Therapist, LMSW",
+    "headshot_url": "https://photos.psychologytoday.com/be5573bc-d5fb-48f1-9730-6f14956129d2/2/320x400.jpeg",
+    "location": "Online Only",
+    "child_fit_signals": [
+      "Anxious",
+      "Family conflict",
+      "Identity exploration",
+      "Trauma support"
+    ],
+    "parent_concern_signals": [
+      "Needs identity-affirming care",
+      "Needs trauma-informed care",
+      "Needs help with anxiety",
+      "Needs family involvement",
+      "Wants practical coping skills"
+    ],
+    "communication_style_signals": [
+      "Collaborative",
+      "Affirming",
+      "Skills-focused",
+      "Nonjudgmental",
+      "Culturally responsive"
+    ],
+    "emotional_tone_summary": "Empowering, affirming, and deeply thoughtful.",
+    "parent_friendly_summary": "May fit teens or families seeking a collaborative, identity-affirming approach that prioritizes personal agency and holistic healing.",
+    "possible_less_ideal_if": [
+      "You prefer a strictly clinical or diagnostic-focused approach"
+    ],
+    "parent_question_suggestions": [
+      "How do you incorporate a teen's identity into the healing process?",
+      "What does a typical session look like for a teen?",
+      "How do you involve family members in the therapy process?"
+    ]
+  }
+]
